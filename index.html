@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            height: 100vh;
+            padding: 50px;
+        }
+        #home {
+            background-color: #f4f4f4;
+        }
+        #about {
+            background-color: #ddd;
+        }
+        #services {
+            background-color: #bbb;
+        }
+        #contact {
+            background-color: #999;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the home section.</p>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>This is the about section.</p>
+    </section>
+    <section id="services">
+        <h1>Our Services</h1>
+        <p>This is the services section.</p>
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>This is the contact section.</p>
+    </section>
+</body>
+</html>
+
